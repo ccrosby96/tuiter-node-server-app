@@ -23,21 +23,15 @@ const updateTuit = (req, res) => {
     res.sendStatus(200);
 }
 
-
 const deleteTuit = (req, res) => {
     const tuitdIdToDelete = req.params.tid;
     tuits = tuits.filter((t) =>
         t._id !== tuitdIdToDelete);
     res.sendStatus(200);
 }
-
-
-
 export default (app) => {
     app.post('/api/tuits', createTuit);
     app.get('/api/tuits', findTuits);
     app.put('/api/tuits/:tid', updateTuit);
     app.delete('/api/tuits/:tid', deleteTuit);
 }
-
-
