@@ -4,7 +4,7 @@ const createTuit = async (req, res) => {
     const newTuit = req.body;
     newTuit.likes = 0;
     newTuit.liked = false;
-    const insertedTuit = await tuitDao.createTuit(newTuit);
+    const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
 }
 
@@ -34,5 +34,3 @@ export default (app) => {
     app.put('/api/tuits/:tid', updateTuit);
     app.delete('/api/tuits/:tid', deleteTuit);
 }
-
-
